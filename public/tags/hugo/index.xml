@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on Shea&#39;s Blog</title>
-    <link>https://sheaxiang.gitee.io/tags/hugo/</link>
+    <link>https://sheaxiang.github.io/tags/hugo/</link>
     <description>Recent content in hugo on Shea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/sheaxiang&#34;&gt;Shea Xiang&lt;/a&gt; 2021</copyright>
     <lastBuildDate>Wed, 24 Mar 2021 19:34:45 +0800</lastBuildDate>
     
-	<atom:link href="https://sheaxiang.gitee.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sheaxiang.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Change Log</title>
-      <link>https://sheaxiang.gitee.io/note/change-log/</link>
+      <link>https://sheaxiang.github.io/note/change-log/</link>
       <pubDate>Wed, 24 Mar 2021 19:34:45 +0800</pubDate>
       
-      <guid>https://sheaxiang.gitee.io/note/change-log/</guid>
+      <guid>https://sheaxiang.github.io/note/change-log/</guid>
       <description>测试 测试测试测试测试
 测试
 测试
