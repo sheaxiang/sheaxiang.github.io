@@ -1,0 +1,54 @@
+baseurl = "https://sheaxiang.gitee.io"
+languageCode = "en"
+title = "Shea's Blog"
+theme = "kiss"
+copyright = "&copy; <a target=\"_blank\" href=\"https://github.com/sheaxiang\">Shea Xiang</a> 2021"
+disqusShortname = "shortname"
+googleAnalytics = ""
+Paginate = 100 # Number of posts per page
+enableRobotsTXT = true
+
+menu = "main"
+
+[params.rss] # Adding this tag enables RSS feed
+includeContent = true # Includes whole content in rss
+authorName = "sheaxiang" # Author full name
+authorEmail = "642290531@qq.com" # Author email
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = false # Adds OpenGraph and Twitter cards
+homeTitle = "dsda" # Title for home page
+poweredby = true # Adds powered by hugo and kiss below Copyright
+related = true # Includes related articles at the bottom of the article
+codeCopy = true # Add copy button above code blocks
+taxonomiesCount = true # Add taxonomies count
+
+[params.social]
+twitter = ""
+github = "sheaxiang"
+email = ""
+linkedin = ""
+facebook = ""
+instagram = ""
+codepen = ""
+rss = "index.xml" # Add this to show RSS button in social.
+
+[params.social.config]
+platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+
+[params.matomoAnalytics]
+siteID = 1
+rootURL = "//matomo.example.com/"
+
+[params.fathomAnalytics]
+rootURL = "//fathom.example.com/"
+
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true

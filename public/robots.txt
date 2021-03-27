@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://sheaxiang.gitee.io/sitemap.xml
