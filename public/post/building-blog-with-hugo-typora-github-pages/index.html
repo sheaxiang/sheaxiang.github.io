@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用Hugo, Typora, GitHub Pages搭建博客 - Shea&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sheaxiang" /><meta name="description" content="简述 在没有服务器和域名的情况下,想自己写博客,需要怎么做呢? 答案是使用Hugo, Typora, GitHub来搭建属于自己的博客,我们先来看下各自简介 Hugo: 是" /><meta name="keywords" content="shea, xiang, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="https://sheaxiang.github.io/post/building-blog-with-hugo-typora-github-pages/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用Hugo, Typora, GitHub Pages搭建博客" />
+<meta property="og:description" content="简述 在没有服务器和域名的情况下,想自己写博客,需要怎么做呢? 答案是使用Hugo, Typora, GitHub来搭建属于自己的博客,我们先来看下各自简介 Hugo: 是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sheaxiang.github.io/post/building-blog-with-hugo-typora-github-pages/" />
+<meta property="article:published_time" content="2021-03-27T18:29:08+08:00" />
+<meta property="article:modified_time" content="2021-03-27T18:29:08+08:00" />
+<meta itemprop="name" content="使用Hugo, Typora, GitHub Pages搭建博客">
+<meta itemprop="description" content="简述 在没有服务器和域名的情况下,想自己写博客,需要怎么做呢? 答案是使用Hugo, Typora, GitHub来搭建属于自己的博客,我们先来看下各自简介 Hugo: 是">
+<meta itemprop="datePublished" content="2021-03-27T18:29:08&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-27T18:29:08&#43;08:00" />
+<meta itemprop="wordCount" content="1935">
+
+
+
+<meta itemprop="keywords" content="hugo,typora,github," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo, Typora, GitHub Pages搭建博客"/>
+<meta name="twitter:description" content="简述 在没有服务器和域名的情况下,想自己写博客,需要怎么做呢? 答案是使用Hugo, Typora, GitHub来搭建属于自己的博客,我们先来看下各自简介 Hugo: 是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">shea</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">shea</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用Hugo, Typora, GitHub Pages搭建博客</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-03-27 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/"> 教程 </a>
+            </div>
+          <span class="more-meta"> 1935 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#简述">简述</a></li>
+        <li><a href="#流程">流程</a>
+          <ul>
+            <li><a href="#hugo-快速开始">Hugo 快速开始</a>
+              <ul>
+                <li><a href="#检验hugo是否已安装如果没有请安装">检验hugo是否已安装,如果没有,请安装</a></li>
+                <li><a href="#创建新站点">创建新站点</a></li>
+                <li><a href="#添加主题">添加主题</a></li>
+                <li><a href="#创建第一篇文章">创建第一篇文章</a></li>
+                <li><a href="#启动-hugo-服务">启动 Hugo 服务</a></li>
+                <li><a href="#构建静态文件-在-public目录下">构建静态文件, 在 <code>public</code>目录下</a></li>
+              </ul>
+            </li>
+            <li><a href="#typora快速开始">Typora快速开始</a>
+              <ul>
+                <li><a href="#插入本地图片">插入本地图片</a></li>
+              </ul>
+            </li>
+            <li><a href="#github-pages快速开始">GitHub Pages快速开始</a></li>
+            <li><a href="#附录">附录</a>
+              <ul>
+                <li><a href="#配置默认生成模板">配置默认生成模板</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="简述">简述</h2>
+<p>在没有服务器和域名的情况下,想自己写博客,需要怎么做呢? 答案是使用<code>Hugo</code>, <code>Typora</code>, <code>GitHub</code>来搭建属于自己的博客,我们先来看下各自简介</p>
+<p><a href="https://gohugo.io/">Hugo</a>: 是一个使用<code>golang</code>语言编写的静态站点生成器,它可以把<code>markdown</code>文件转换成<code>html</code>文件,再通过上传到<code>GitHub</code>上来达到生成博客的目的</p>
+<p><a href="https://www.typora.io/">Typora</a>: 是一个功能强大的 <code>MarkDown</code> 文本编辑器,可在<code>mac OS X</code>, <code>WIndows</code>, <code>Linux</code>平台下使用,可以使用此软件对<code>Hugo</code>生成的.md文件进行编辑</p>
+<p><a href="https://pages.github.com/">GitHub Pages</a>: 是由GitHub提供的用于托管个人网站的静态页面,只需要在GitHub上创建仓库,push,即可更新网站内容,需要注意的是:<code>此网站可能会间接性不能访问</code></p>
+<h2 id="流程">流程</h2>
+<p>安装过程不再赘述,这里给出下载地址:</p>
+<p>Hugo: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></p>
+<p>Typora Windows: <a href="https://www.typora.io/#windows">https://www.typora.io/#windows</a></p>
+<p>Typora Linux: <a href="https://www.typora.io/#linux">https://www.typora.io/#linux</a></p>
+<h3 id="hugo-快速开始">Hugo 快速开始</h3>
+<h4 id="检验hugo是否已安装如果没有请安装">检验hugo是否已安装,如果没有,请安装</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo version
+
+<span class="c1"># Hugo Static Site Generator v0.68.3/extended linux/amd64 BuildDate: 2020-03-25T06:15:45Z</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="创建新站点">创建新站点</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo new site shea
+
+<span class="c1"># Congratulations! Your new Hugo site is created in /shea.</span>
+
+<span class="c1"># Just a few more steps and you&#39;re ready to go:</span>
+
+<span class="c1"># 1. Download a theme into the same-named folder.</span>
+<span class="c1">#   Choose a theme from https://themes.gohugo.io/ or</span>
+<span class="c1">#   create your own with the &#34;hugo new theme &lt;THEMENAME&gt;&#34; command.</span>
+<span class="c1"># 2. Perhaps you want to add some content. You can add single files</span>
+<span class="c1">#   with &#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.</span>
+<span class="c1"># 3. Start the built-in live server via &#34;hugo server&#34;.</span>
+
+<span class="c1"># Visit https://gohugo.io/ for quickstart guide and full documentation.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="添加主题">添加主题</h4>
+<p>我现在使用的主题是 <a href="https://themes.gohugo.io/hugo-theme-even/">https://themes.gohugo.io/hugo-theme-even/</a>,安装主题很简单,只需要把主题下载下来,然后放到<code>theme</code>文件夹里,然后配置下就可以了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 在站点根目录执行</span>
+git clone https://github.com/olOwOlo/hugo-theme-even themes/even
+
+<span class="c1"># 更新主题</span>
+<span class="nb">cd</span> ./themes/even/
+git pull
+</code></pre></td></tr></table>
+</div>
+</div><p>配置:</p>
+<ul>
+<li>在主题的 <code>exampleSite</code> 目录下有个<code>config.toml</code>文件,需将这个文件的内容复制到站点根目录下<code>(根目录下也有一个同名文件)</code>,然后根据需求更改,具体怎么配置的话,可以直接看文件内容,都有注释的,这里就不再赘述</li>
+<li>对于这个主题，你应该使用 post 而不是 posts，即 <code>hugo new post/some-content.md</code>。</li>
+</ul>
+<h4 id="创建第一篇文章">创建第一篇文章</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 需要注意的是,这里我把 posts 换成了 post,因为主题需要</span>
+hugo new post/my-first-post.md
+</code></pre></td></tr></table>
+</div>
+</div><p>执行该命令会生成包含如下文件内容:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">---
+title: &#34;My First Post&#34;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---
+
+这里我们更改 draft:false
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="启动-hugo-服务">启动 Hugo 服务</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo serve
+
+<span class="c1"># Building sites …</span> 
+
+<span class="c1">#                   | EN</span>
+<span class="c1">#-------------------+-----</span>
+<span class="c1">#  Pages            |  3</span>
+<span class="c1">#  Paginator pages  |  0</span>
+<span class="c1">#  Non-page files   |  0</span>
+<span class="c1">#  Static files     |  0</span>
+<span class="c1">#  Processed images |  0</span>
+<span class="c1">#  Aliases          |  0</span>
+<span class="c1">#  Sitemaps         |  1</span>
+<span class="c1">#  Cleaned          |  0</span>
+
+<span class="c1"># Built in 13 ms</span>
+<span class="c1"># Watching for changes in /mnt/c/Users/Administrator/Desktop/sheaxiang/{archetypes,content,data,layouts,static}</span>
+<span class="c1"># Watching for config changes in /mnt/c/Users/Administrator/Desktop/sheaxiang/config.toml</span>
+<span class="c1"># Environment: &#34;development&#34;</span>
+<span class="c1"># Serving pages from memory</span>
+<span class="c1"># Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender</span>
+<span class="c1"># Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)</span>
+<span class="c1"># Press Ctrl+C to stop</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里我们访问<a href="http://localhost:1313/">http://localhost:1313/</a>,就可以看到网站了</p>
+<h4 id="构建静态文件-在-public目录下">构建静态文件, 在 <code>public</code>目录下</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo
+
+<span class="c1"># Building sites …</span> 
+
+<span class="c1">#                    | EN</span>
+<span class="c1"># -------------------+-----</span>
+<span class="c1">#   Pages            |  3</span>
+<span class="c1">#   Paginator pages  |  0</span>
+<span class="c1">#   Non-page files   |  0</span>
+<span class="c1">#   Static files     |  0</span>
+<span class="c1">#   Processed images |  0</span>
+<span class="c1">#   Aliases          |  0</span>
+<span class="c1">#   Sitemaps         |  1</span>
+<span class="c1">#   Cleaned          |  0</span>
+
+<span class="c1"># Total in 24 ms</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="typora快速开始">Typora快速开始</h3>
+<p>简单的使用就自己摸索,这里主要是介绍<code>插入本地图片</code>如何与<code>Hugo</code>结合</p>
+<h4 id="插入本地图片">插入本地图片</h4>
+<p>首先,我们需要知道的是,Hugo的<code>静态文件</code>存放目录是在<code>static</code>, 现在我们打开 <code>Typora</code>软件,在左上角点击 文件 -&gt; 偏好设置 -&gt; 图像,按照如下图设置:</p>
+<p><img src="/images/building-blog-with-hugo-typora-github-pages.assets/rOcUdn4rh9HnrYKl.png" alt="Typora图像设置"></p>
+<p>点击<code>文件夹图标</code>选择站点下的static文件夹, 这里的<code>${filename}</code>是md文件的文件名,可根据自己的需求配置</p>
+<p>然后再点击 <code>格式-&gt;图像-&gt;设置图片根路径</code>, 选择你站点下的<code>static</code>文件夹,就可以正常插入图片并正常显示了</p>
+<p>还有一点<code>需要注意</code>的是,使用Typora插入本地图片时,请注意插入<code>图片的文件名</code>,如果像是qq截图这种生成的文件名(带[] 这种特殊符号),可能会导致插入失败</p>
+<h3 id="github-pages快速开始">GitHub Pages快速开始</h3>
+<p>在<a href="https://github.com/">github</a>上注册账号这些就不说了,下面我们来说创建GitHub Pages</p>
+<p>在仓库中新建仓库名为: <code>github用户名.github.io</code></p>
+<p>然后进入该仓库,点击 <code>Settings</code>,往下拉显示:</p>
+<p><img src="/images/building-blog-with-hugo-typora-github-pages.assets/@QNHO%60%7D%5B1UH0W1MJ9XTGU_N.png" alt="github pages settings"></p>
+<p>这时候访问站点,会提示<code>404</code>,因为仓库中没有<code>index.html</code>文件</p>
+<p>我们把仓库克隆下来,然后把刚才站点的文件全部复制进去,然后提交,这时候访问还是会404,你仔细观察会发现,Hugo构建的静态文件在<code>public</code>文件夹,在一个<code>二级目录</code>,而GitHub Pages没有选项可以选择二级目录(gitee可以,但是提交代码更新了,需要手动去刷新重新部署),但是会发现,有选择分支的选项,这我们可以利用起来,在git中有个<code>subtree</code>,具体使用可以翻阅文档,我们先来实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 站点根目录执行</span>
+git subtree push --prefix public origin public
+</code></pre></td></tr></table>
+</div>
+</div><p>第一个public 是当前项目的文件夹,第二个是远程分支的名称</p>
+<p>这时我们再在仓库的github pages设置里选择分支为public,点击save,稍等片刻,就可以正常访问了</p>
+<h3 id="附录">附录</h3>
+<h4 id="配置默认生成模板">配置默认生成模板</h4>
+<p>在 <code>archetypes/default.md</code>文件里,我们可以配置新创建的文件的初始内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">---
+title: &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+date: {{ .Date }}
+typora-root-url: ..\..\static
+tags: []
+categories: []
+draft: true
+---
+</code></pre></td></tr></table>
+</div>
+</div><p>这里新增了 tags (<code>标签</code>), categories(<code>分类</code>), typora-root-url (<code>这是我们刚才配置的插入本地文件配置的根路径</code>)</p>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/typora/">typora</a>
+          <a href="/tags/github/">github</a>
+          </div>
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:642290531@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sheaxiang" class="iconfont icon-github" title="github"></a>
+  <a href="https://sheaxiang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>sheaxiang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
