@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>符号 on Shea&#39;s Blog</title>
+    <link>/tags/%E7%AC%A6%E5%8F%B7/</link>
+    <description>Recent content in 符号 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Mar 2018 00:17:55 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%AC%A6%E5%8F%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>三段式版本号，和Composer波浪线符号 ~ 和幂符号 ^ 的区别</title>
+      <link>/post/three-segment-version-number-and-composer-symbol/</link>
+      <pubDate>Sat, 10 Mar 2018 00:17:55 +0800</pubDate>
+      
+      <guid>/post/three-segment-version-number-and-composer-symbol/</guid>
+      <description>三段式版本号的意义： 1 2 3 1：大版本 2：小版本 3：补丁版本 ^符号和~符号的意义： 1 2 ~1.2.3 代表 1.2.3 &amp;lt;= 版本号 &amp;lt; 1.3.0 //只改变最末尾的版本 ^1.2.3 代表 1.2.3 &amp;lt;= 版本</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>两数相加-php版 - Shea&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sheaxiang" /><meta name="description" content="题目: 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将" /><meta name="keywords" content="shea, xiang, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="/post/add-two-numbers-php-version/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="两数相加-php版" />
+<meta property="og:description" content="题目: 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/add-two-numbers-php-version/" />
+<meta property="article:published_time" content="2020-06-29T01:05:28+08:00" />
+<meta property="article:modified_time" content="2020-06-29T01:05:28+08:00" />
+<meta itemprop="name" content="两数相加-php版">
+<meta itemprop="description" content="题目: 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将">
+<meta itemprop="datePublished" content="2020-06-29T01:05:28&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-29T01:05:28&#43;08:00" />
+<meta itemprop="wordCount" content="963">
+
+
+
+<meta itemprop="keywords" content="php,算法," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="两数相加-php版"/>
+<meta name="twitter:description" content="题目: 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">shea</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">shea</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">两数相加-php版</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-06-29 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> php </a>
+            <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
+            </div>
+          <span class="more-meta"> 963 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目">题目:</a></li>
+        <li><a href="#解析">解析:</a>
+          <ul>
+            <li><a href="#一-链表">一 链表:</a></li>
+            <li><a href="#二-解题">二 解题:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="题目">题目:</h2>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+输出：7 -&gt; 0 -&gt; 8
+原因：342 + 465 = 807
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="解析">解析:</h2>
+<h3 id="一-链表">一 链表:</h3>
+<p>链表属于<code>线性表</code>的一个子类,线性表,顾名思义:0个或多个数据元素的有限序列,线性表有两种存储结果:<code>顺序存储结构</code>和<code>链式存储结构</code></p>
+<p><code>顺序存储结构</code>: 用一段地址连续的存储单元依次存储线性表的数据元素</p>
+<p><code>链式存储结构:</code> 地址可以是连续也可以是不连续的存储单元存储数据元素</p>
+<p>而<code>基于链式存储结构的链表</code>,可以理解为:你要找一个人,名为张三,首先跑到了A,没找到,A告诉你B可能知道,你跑到B,B说C可能知道,跑到C,果然找到了张三,如果没有就一直不停的去找</p>
+<p>链表分为:<code>单链表</code>,<code>循环链表</code>和<code>双向链表</code></p>
+<p>单链表很好理解,每个节点都存有当前数据和下个节点的地址</p>
+<p>循环链表,则是在单链表的基础上加上了闭环,最后一个元素又指向了第一个元素,主要特点是:①适合合并两个循环链表,②从任意一个节点出发,都能访问链表的全部节点</p>
+<p>双向链表,顾名思义,每个节点既指定了前驱也指定了后继,这个比单链表要复杂一些,有点是操作每个节点相邻的节点效率会比较高</p>
+<p>这一题使用的是最简单的单链表</p>
+<h3 id="二-解题">二 解题:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this-&gt;val = $val; }
+ * }
+ */
+class Solution {
+
+    /**
+     * @param ListNode $l1
+     * @param ListNode $l2
+     * @return ListNode
+     */
+    function addTwoNumbers($l1, $l2) {
+        $obj = null;
+        //进位,比如9+9+1=19
+        $additional = 0;
+
+        do {
+            //第一个链表的一个值+第二个链表的一个值+进位
+            $value = $l1-&gt;val + $l2-&gt;val + $additional;
+
+            if ($value <span class="p">&lt;</span> <span class="nt">10</span><span class="err">)</span> <span class="err">{//</span><span class="na">小于10则进位为0</span>
+                <span class="err">$</span><span class="na">additional </span><span class="o">=</span> <span class="s">0;</span>
+            <span class="err">}</span> <span class="na">else</span> <span class="err">{//</span><span class="na">大于10则进位为1</span><span class="err">,</span><span class="na">同时值-10</span>
+                <span class="err">$</span><span class="na">value</span> <span class="na">-</span><span class="o">=</span> <span class="s">10;</span>
+                <span class="err">$</span><span class="na">additional </span><span class="o">=</span> <span class="s">1;</span>
+            <span class="err">}</span>
+            <span class="err">//</span><span class="na">初始化链表</span>
+            <span class="err">$</span><span class="na">temp_obj </span><span class="o">=</span> <span class="s">new</span> <span class="na">ListNode</span><span class="err">($</span><span class="na">value</span><span class="err">);</span>
+            <span class="err">//</span><span class="na">第一次</span><span class="err">$</span><span class="na">obj为空</span><span class="err">,</span><span class="na">请注意</span><span class="err">,</span><span class="na">这里是赋值了对象</span><span class="err">,=</span><span class="na">和clone是有区别的</span><span class="err">,</span><span class="na">一个是深拷贝一个是浅拷贝</span>
+            <span class="na">if</span> <span class="err">(</span><span class="na">is_null</span><span class="err">($</span><span class="na">obj</span><span class="err">))</span> <span class="err">{</span>
+                <span class="err">$</span><span class="na">obj </span><span class="o">=</span> <span class="s">$temp_obj;</span>
+            <span class="err">}</span> <span class="na">else</span> <span class="err">{</span>
+                <span class="err">//</span><span class="na">下个值则写入链表的next</span>
+                <span class="err">$</span><span class="na">next-</span><span class="p">&gt;</span>next = $temp_obj;
+            }
+            //为下次循环做准备
+            $next = $temp_obj;
+
+            $l1 = $l1-&gt;next;
+            $l2 = $l2-&gt;next;
+   
+        } while($l1 || $l2 || $additional);//只要有一个都执行,使用do while是为了需先执行一次改变$l1,$l2,$additional
+
+        return $obj;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">php</a>
+          <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/mysql-optimization-return-table-query-and-overlay-index/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">MySQL优化:回表查询和覆盖索引</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/laravel-source-code-analysis-life-cycle/">
+            <span class="next-text nav-default">laravel源码分析-生命周期</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:642290531@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sheaxiang" class="iconfont icon-github" title="github"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>sheaxiang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

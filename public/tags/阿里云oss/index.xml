@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阿里云OSS on Shea&#39;s Blog</title>
+    <link>/tags/%E9%98%BF%E9%87%8C%E4%BA%91oss/</link>
+    <description>Recent content in 阿里云OSS on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:44:27 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91oss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>laravel php 使用阿里云OSS</title>
+      <link>/post/laravel-php-uses-alibaba-cloud-oss/</link>
+      <pubDate>Thu, 24 Jan 2019 00:44:27 +0800</pubDate>
+      
+      <guid>/post/laravel-php-uses-alibaba-cloud-oss/</guid>
+      <description>前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下 首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket 新建 Bucket 然后</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>element-ui on Shea&#39;s Blog</title>
+    <link>/tags/element-ui/</link>
+    <description>Recent content in element-ui on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Nov 2018 00:36:01 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/element-ui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>element-ui 表单验证rule不识别</title>
+      <link>/post/element-ui-form-validation-rule-not-recognized/</link>
+      <pubDate>Wed, 14 Nov 2018 00:36:01 +0800</pubDate>
+      
+      <guid>/post/element-ui-form-validation-rule-not-recognized/</guid>
+      <description>最近在使用laravel+vue+element-ui编写程序,在使用表单验证时,出现表单有值但是验证不通过的情况,后来恍然大悟,是要v-m</description>
+    </item>
+    
+  </channel>
+</rss>

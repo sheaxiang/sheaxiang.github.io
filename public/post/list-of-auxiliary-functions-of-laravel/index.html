@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Laravel的辅助函数列表 - Shea&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sheaxiang" /><meta name="description" content="数组： array_add() 如果给的键不在数组中，则会把给定的键值添加到数组中： 1 2 3 $array = array_add([&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;Desk&amp;#39;], &amp;#39;price&amp;#39;, 100); // [&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;Desk&amp;#39;, &amp;#39;price&amp;#39; =&amp;gt; 100] 这里合并数组有另外的一个方法： 1 2 3 $person = [&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;shea&amp;#39;]" /><meta name="keywords" content="shea, xiang, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="/post/list-of-auxiliary-functions-of-laravel/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Laravel的辅助函数列表" />
+<meta property="og:description" content="数组： array_add() 如果给的键不在数组中，则会把给定的键值添加到数组中： 1 2 3 $array = array_add([&#39;name&#39; =&gt; &#39;Desk&#39;], &#39;price&#39;, 100); // [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100] 这里合并数组有另外的一个方法： 1 2 3 $person = [&#39;name&#39; =&gt; &#39;shea&#39;]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/list-of-auxiliary-functions-of-laravel/" />
+<meta property="article:published_time" content="2018-02-28T00:09:37+08:00" />
+<meta property="article:modified_time" content="2018-02-28T00:09:37+08:00" />
+<meta itemprop="name" content="Laravel的辅助函数列表">
+<meta itemprop="description" content="数组： array_add() 如果给的键不在数组中，则会把给定的键值添加到数组中： 1 2 3 $array = array_add([&#39;name&#39; =&gt; &#39;Desk&#39;], &#39;price&#39;, 100); // [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100] 这里合并数组有另外的一个方法： 1 2 3 $person = [&#39;name&#39; =&gt; &#39;shea&#39;]">
+<meta itemprop="datePublished" content="2018-02-28T00:09:37&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-28T00:09:37&#43;08:00" />
+<meta itemprop="wordCount" content="2141">
+
+
+
+<meta itemprop="keywords" content="laravel,辅助函数," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Laravel的辅助函数列表"/>
+<meta name="twitter:description" content="数组： array_add() 如果给的键不在数组中，则会把给定的键值添加到数组中： 1 2 3 $array = array_add([&#39;name&#39; =&gt; &#39;Desk&#39;], &#39;price&#39;, 100); // [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100] 这里合并数组有另外的一个方法： 1 2 3 $person = [&#39;name&#39; =&gt; &#39;shea&#39;]"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">shea</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">shea</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Laravel的辅助函数列表</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-28 </span>
+        <div class="post-category">
+            <a href="/categories/laravel/"> Laravel </a>
+            </div>
+          <span class="more-meta"> 2141 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#数组">数组：</a>
+          <ul>
+            <li><a href="#array_add">array_add()</a></li>
+            <li><a href="#array_collapse">array_collapse()</a></li>
+            <li><a href="#array_divide">array_divide()</a></li>
+            <li><a href="#array_dot">array_dot()</a></li>
+            <li><a href="#array_except">array_except()</a></li>
+            <li><a href="#array_first">array_first()</a></li>
+            <li><a href="#array_flatten">array_flatten()</a></li>
+            <li><a href="#array_forget">array_forget()</a></li>
+            <li><a href="#array_get">array_get()</a></li>
+            <li><a href="#array_has">array_has()</a></li>
+            <li><a href="#array_last">array_last()</a></li>
+            <li><a href="#array_only">array_only()</a></li>
+            <li><a href="#array_pluck">array_pluck()</a></li>
+            <li><a href="#array_prepend">array_prepend()</a></li>
+            <li><a href="#array_pull">array_pull()</a></li>
+            <li><a href="#array_random">array_random()</a></li>
+            <li><a href="#array_set">array_set()</a></li>
+            <li><a href="#array_sort">array_sort()</a></li>
+            <li><a href="#array_sort_recursive">array_sort_recursive()</a></li>
+            <li><a href="#array_where">array_where()</a></li>
+            <li><a href="#array_wrap">array_wrap()</a></li>
+            <li><a href="#data_fill">data_fill()</a></li>
+            <li><a href="#data_get">data_get()</a></li>
+            <li><a href="#data_set">data_set()</a></li>
+            <li><a href="#head">head()</a></li>
+            <li><a href="#last">last()</a></li>
+          </ul>
+        </li>
+        <li><a href="#路径">路径：</a>
+          <ul>
+            <li><a href="#app_path">app_path()</a></li>
+            <li><a href="#base_path">base_path()</a></li>
+            <li><a href="#config_path">config_path()</a></li>
+            <li><a href="#database_path">database_path()</a></li>
+            <li><a href="#mix">mix()</a></li>
+            <li><a href="#public_path">public_path()</a></li>
+            <li><a href="#resourse_path">resourse_path()</a></li>
+            <li><a href="#storage_path">storage_path()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="数组">数组：</h2>
+<h3 id="array_add">array_add()</h3>
+<p>如果给的键不在数组中，则会把给定的键值添加到数组中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = array_add([&#39;name&#39; =&gt; &#39;Desk&#39;], &#39;price&#39;, 100);
+
+// [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100]
+</code></pre></td></tr></table>
+</div>
+</div><p>这里合并数组有另外的一个方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$person = [&#39;name&#39; =&gt; &#39;shea&#39;] + [&#39;age&#39; =&gt; &#39;22&#39;] + [&#39;age&#39; =&gt; &#39;22&#39;];
+
+// [[&#34;name&#34;=&gt;&#34;shea&#34;], [&#34;age&#34;=&gt;&#34;22&#34;]]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_collapse">array_collapse()</h3>
+<p>将多个单个函数合并成一个数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = array_collapse([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_divide">array_divide()</h3>
+<p>将返回两个数组，一个包含原始数组的键，另一个包含原始数组的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">list($keys, $values) = array_divide([&#39;name&#39; =&gt; &#39;Desk&#39;]);
+
+// $keys: [&#39;name&#39;]
+
+// $values: [&#39;Desk&#39;]
+</code></pre></td></tr></table>
+</div>
+</div><p>ps:这里的list(var,var)，用于在一次赋值中给一组变量赋值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$my_array = array(&#34;Dog&#34;,&#34;Cat&#34;,&#34;Horse&#34;);
+
+list($a, $b, $c) = $my_array;
+echo &#34;I have several animals, a $a, a $b and a $c.&#34;;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_dot">array_dot()</h3>
+<p>将多维数组平铺到一维数组中，点代表深度：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = array_dot([&#39;foo&#39; =&gt; [&#39;bar&#39; =&gt; &#39;baz&#39;]]);
+
+// [&#39;foo.bar&#39; =&gt; &#39;baz&#39;];
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_except">array_except()</h3>
+<p>从数组中删除给定的键值对：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100];
+
+$array = array_except($array, [&#39;price&#39;]);
+
+// [&#39;name&#39; =&gt; &#39;Desk&#39;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_first">array_first()</h3>
+<p>返回数组中第一个通过给定测试的元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [100, 200, 300];
+
+$value = array_first($array, function ($value, $key) {
+    return $value &gt;= 150;
+});
+
+// 200
+</code></pre></td></tr></table>
+</div>
+</div><p>将默认值作为第三个参数传给方法，如果没有值通过测试，则返回默认值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$value = array_first($array, $callback, $default);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_flatten">array_flatten()</h3>
+<p>将多为数组平铺为一维数组，这里返回值为数组的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;name&#39; =&gt; &#39;Joe&#39;, &#39;languages&#39; =&gt; [&#39;PHP&#39;, &#39;Ruby&#39;]];
+
+$array = array_flatten($array);
+
+// [&#39;Joe&#39;, &#39;PHP&#39;, &#39;Ruby&#39;];
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_forget">array_forget()</h3>
+<p>使用点符号从深度嵌套的数组中移除给定的键值对：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+array_forget($array, &#39;products.desk&#39;);
+
+// [&#39;products&#39; =&gt; []]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_get">array_get()</h3>
+<p>使用点符号从深度嵌套的数组中检索值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+$value = array_get($array, &#39;products.desk&#39;);
+
+// [&#39;price&#39; =&gt; 100]
+</code></pre></td></tr></table>
+</div>
+</div><p>可接收默认值作为第三个参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$value = array_get($array, &#39;names.john&#39;, &#39;default&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_has">array_has()</h3>
+<p>使用点符号检查数组中是否存在给定的项目或项目组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;product&#39; =&gt; [&#39;name&#39; =&gt; &#39;desk&#39;, &#39;price&#39; =&gt; 100]];
+
+$hasItem = array_has($array, &#39;product.name&#39;);
+
+// true
+
+$hasItems = array_has($array, [&#39;product.price&#39;, &#39;product.discount&#39;]);
+
+// false
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_last">array_last()</h3>
+<p>返回数组中通过指定测试的最后一个元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [100, 200, 300, 110];
+
+$value = array_last($array, function ($value, $key) {
+    return $value &gt;= 150;
+});
+
+// 300
+</code></pre></td></tr></table>
+</div>
+</div><p>可有默认值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$last = array_last($array, $callback, $default);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_only">array_only()</h3>
+<p>仅返回给定数组中指定的键值对：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100, &#39;orders&#39; =&gt; 10];
+
+$array = array_only($array, [&#39;name&#39;, &#39;price&#39;]);
+
+// [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_pluck">array_pluck()</h3>
+<p>从数组中检索给定数组的所有值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [
+    [&#39;developer&#39; =&gt; [&#39;id&#39; =&gt; 1, &#39;name&#39; =&gt; &#39;Taylor&#39;]],
+    [&#39;developer&#39; =&gt; [&#39;id&#39; =&gt; 2, &#39;name&#39; =&gt; &#39;Abigail&#39;]],
+];
+
+$array = array_pluck($array, &#39;developer.name&#39;);
+
+// [&#39;Taylor&#39;, &#39;Abigail&#39;];
+</code></pre></td></tr></table>
+</div>
+</div><p>也可指定生成的列表的键：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = array_pluck($array, &#39;developer.name&#39;, &#39;developer.id&#39;);
+
+// [1 =&gt; &#39;Taylor&#39;, 2 =&gt; &#39;Abigail&#39;];
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_prepend">array_prepend()</h3>
+<p>将一个项目推送到数组开头，插入值并推送：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;];
+
+$array = array_prepend($array, &#39;zero&#39;);
+
+// $array: [&#39;zero&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;]
+</code></pre></td></tr></table>
+</div>
+</div><p>也可指定该值的键：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;price&#39; =&gt; 100];
+
+$array = array_prepend($array, &#39;Desk&#39;, &#39;name&#39;);
+
+// [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_pull">array_pull()</h3>
+<p>返回并从数组中删除键值对：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;name&#39; =&gt; &#39;Desk&#39;, &#39;price&#39; =&gt; 100];
+
+$name = array_pull($array, &#39;name&#39;);
+
+// $name: Desk
+
+// $array: [&#39;price&#39; =&gt; 100]
+</code></pre></td></tr></table>
+</div>
+</div><p>可有默认值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$value = array_pull($array, $key, $default);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_random">array_random()</h3>
+<p>从数组中返回随机值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [1, 2, 3, 4, 5];
+
+$random = array_random($array);
+
+// 4 - (随机获取)
+</code></pre></td></tr></table>
+</div>
+</div><p>也可指定返回的数量，返回的为一个数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$items = array_random($array, 2);
+
+// [2, 5] - (随机获取)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_set">array_set()</h3>
+<p>使用点符号在深度嵌套的数组中设置一个值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+array_set($array, &#39;products.desk.price&#39;, 200);
+
+// [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 200]]]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_sort">array_sort()</h3>
+<p>按照其值排序数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [&#39;Desk&#39;, &#39;Table&#39;, &#39;Chair&#39;];
+
+$sorted = array_sort($array);
+
+// [&#39;Chair&#39;, &#39;Desk&#39;, &#39;Table&#39;]
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以按给定的闭包返回的结果对数组进行排序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [
+    [&#39;name&#39; =&gt; &#39;Desk&#39;],
+    [&#39;name&#39; =&gt; &#39;Table&#39;],
+    [&#39;name&#39; =&gt; &#39;Chair&#39;],
+];
+
+$sorted = array_values(array_sort($array, function ($value) {
+    return $value[&#39;name&#39;];
+}));
+
+/*
+    [
+        [&#39;name&#39; =&gt; &#39;Chair&#39;],
+        [&#39;name&#39; =&gt; &#39;Desk&#39;],
+        [&#39;name&#39; =&gt; &#39;Table&#39;],
+    ]
+*/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_sort_recursive">array_sort_recursive()</h3>
+<p>使用sort函数递归排序数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [
+    [&#39;Roman&#39;, &#39;Taylor&#39;, &#39;Li&#39;],
+    [&#39;PHP&#39;, &#39;Ruby&#39;, &#39;JavaScript&#39;],
+];
+
+$sorted = array_sort_recursive($array);
+
+/*
+    [
+        [&#39;Li&#39;, &#39;Roman&#39;, &#39;Taylor&#39;],
+        [&#39;JavaScript&#39;, &#39;PHP&#39;, &#39;Ruby&#39;],
+    ]
+*/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_where">array_where()</h3>
+<p>使用给定的闭包来过滤数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [100, &#39;200&#39;, 300, &#39;400&#39;, 500];
+
+$array = array_where($array, function ($value, $key) {
+    return is_string($value);
+});
+
+// [1 =&gt; 200, 3 =&gt; 400]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="array_wrap">array_wrap()</h3>
+<p>将给定的值包装成一个数组，如果给定的值已经为数组，则不变：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$string = &#39;Laravel&#39;;
+
+$array = array_wrap($string);
+
+// [0 =&gt; &#39;Laravel&#39;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="data_fill">data_fill()</h3>
+<p>使用点符号在给的嵌套数组或对象中设置缺少的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$data = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+data_fill($data, &#39;products.desk.price&#39;, 200);
+
+// [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]]   未改变值
+
+data_fill($data, &#39;products.desk.discount&#39;, 10);
+
+// [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100, &#39;discount&#39; =&gt; 10]]]   改变了值
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以使用 * 作为通配符，并相应的填入值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$data = [
+    &#39;products&#39; =&gt; [
+        [&#39;name&#39; =&gt; &#39;Desk 1&#39;, &#39;price&#39; =&gt; 100],
+        [&#39;name&#39; =&gt; &#39;Desk 2&#39;],
+    ],
+];
+
+data_fill($data, &#39;products.*.price&#39;, 200);
+
+/*
+    [
+        &#39;products&#39; =&gt; [
+            [&#39;name&#39; =&gt; &#39;Desk 1&#39;, &#39;price&#39; =&gt; 100],
+            [&#39;name&#39; =&gt; &#39;Desk 2&#39;, &#39;price&#39; =&gt; 200],
+        ],
+    ]
+*/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="data_get">data_get()</h3>
+<p>使用点符号从嵌套数值或对象中检索值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$data = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+$price = data_get($data, &#39;products.desk.price&#39;);
+
+// 100
+</code></pre></td></tr></table>
+</div>
+</div><p>可接收默认值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$discount = data_get($data, &#39;products.desk.discount&#39;, 0);
+
+// 0
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="data_set">data_set()</h3>
+<p>使用点符号设置嵌套路由或对象的一个值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$data = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+data_set($data, &#39;products.desk.price&#39;, 200);
+
+// [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 200]]]
+</code></pre></td></tr></table>
+</div>
+</div><p>可接收通配符 * ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">    $data = [
+        &#39;products&#39; =&gt; [
+            [&#39;name&#39; =&gt; &#39;Desk 1&#39;, &#39;price&#39; =&gt; 100],
+            [&#39;name&#39; =&gt; &#39;Desk 2&#39;, &#39;price&#39; =&gt; 150],
+        ],
+    ];
+
+    data_set($data, &#39;products.*.price&#39;, 200);
+
+    /*
+        [
+            &#39;products&#39; =&gt; [
+                [&#39;name&#39; =&gt; &#39;Desk 1&#39;, &#39;price&#39; =&gt; 200],
+                [&#39;name&#39; =&gt; &#39;Desk 2&#39;, &#39;price&#39; =&gt; 200],
+            ],
+        ]
+    */
+</code></pre></td></tr></table>
+</div>
+</div><p>默认情况下，所有的值都将被覆盖，如果只想设置一个不存在的值，可传入flase作为第三个参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$data = [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]];
+
+data_set($data, &#39;products.desk.price&#39;, 200, false);
+
+// [&#39;products&#39; =&gt; [&#39;desk&#39; =&gt; [&#39;price&#39; =&gt; 100]]]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="head">head()</h3>
+<p>返回给定数组的第一个元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [100, 200, 300];
+
+$first = head($array);
+
+// 100
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="last">last()</h3>
+<p>返回给定数组的最后一个元素：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$array = [100, 200, 300];
+
+$last = last($array);
+
+// 300
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="路径">路径：</h2>
+<h3 id="app_path">app_path()</h3>
+<p>返回app目录的完整路径，还可使用此函数来生成相对于app目录的文件完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = app_path();php
+
+$path = app_path(&#39;Http/Controllers/Controller.php&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="base_path">base_path()</h3>
+<p>返回项目根目录的完整路径，还可使用此函数生成相对于项目根目录的完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = base_path();
+
+$path = base_path(&#39;vendor/bin&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="config_path">config_path()</h3>
+<p>返回应用程序配置目录的完整路径，还可使用此函数来生成相对于应用程序配置目录的文件完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = config_path();
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="database_path">database_path()</h3>
+<p>返回应用程序数据库目录的完整路径，还可使用此函数来生成相对于应用程序数据库目录的文件完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = database_path();
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mix">mix()</h3>
+<p>获取mix版本化文件的路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">mix($file);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="public_path">public_path()</h3>
+<p>返回应用程序public目录的完整路径，还可使用此函数来生成相对于应用程序public目录的文件完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = public_path();
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="resourse_path">resourse_path()</h3>
+<p>返回应用程序resourse目录的完整路径，还可使用此函数来生成相对于应用程序resourse目录的文件完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = resource_path();
+
+$path = resource_path(&#39;assets/sass/app.scss&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="storage_path">storage_path()</h3>
+<p>返回应用程序storage目录的完整路径，还可使用此函数来生成相对于应用程序storage目录的文件完整目录路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">$path = storage_path();
+
+$path = storage_path(&#39;app/file.txt&#39;);
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/laravel/">laravel</a>
+          <a href="/tags/%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0/">辅助函数</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/the-use-of-git-tag/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">git tag标签的使用</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/setting-up-redis-service-in-windows/">
+            <span class="next-text nav-default">在Windows下设置Redis服务</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:642290531@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sheaxiang" class="iconfont icon-github" title="github"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>sheaxiang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php基础 on Shea&#39;s Blog</title>
+    <link>/tags/php%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in php基础 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Feb 2019 00:55:10 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/php%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>php返回换行的json数据</title>
+      <link>/post/php-returns-the-wrapped-json-data/</link>
+      <pubDate>Thu, 21 Feb 2019 00:55:10 +0800</pubDate>
+      
+      <guid>/post/php-returns-the-wrapped-json-data/</guid>
+      <description>今天刚好需要返回拼接数据,展示一大堆数据,需要用到换行,原来想着使用html标签:&amp;lt;br/&amp;gt;,不行,也用过\r,也不行,后面想到</description>
+    </item>
+    
+    <item>
+      <title>PHP 两个问号 ?? 和 ?:的区别</title>
+      <link>/post/the-difference-between-two-question-marks-in-php/</link>
+      <pubDate>Fri, 19 Oct 2018 00:30:49 +0800</pubDate>
+      
+      <guid>/post/the-difference-between-two-question-marks-in-php/</guid>
+      <description>PHP的三元运算符已经很常用了,即:(expr1) ? (expr2) : (expr3) 在 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3 还有一种就是 ?:的形式,自p</description>
+    </item>
+    
+    <item>
+      <title>PHP 可变数量的参数列表 …</title>
+      <link>/post/php-variable-number-of-parameter-list/</link>
+      <pubDate>Tue, 27 Mar 2018 00:20:55 +0800</pubDate>
+      
+      <guid>/post/php-variable-number-of-parameter-list/</guid>
+      <description>PHP在用户自定义函数中支持可变数量的参数列表，在PHP5.6及以上的版本中，由语法…语法实现： 1 2 3 4 5 6 7 8 9 function sum(...$numbers) { $a = 0; foreach ($numbers as $number) { $a +=</description>
+    </item>
+    
+    <item>
+      <title>PHP 可变变量 “$$”</title>
+      <link>/post/php-variable/</link>
+      <pubDate>Fri, 23 Feb 2018 23:44:32 +0800</pubDate>
+      
+      <guid>/post/php-variable/</guid>
+      <description>有时候使用可变变量名是很方便的。就是说，一个变量的变量名可以动态的设置和使用。一个普通的变量通过声明来设置，例如： 1 2 3 &amp;lt;?php $a = &amp;#39;hello&amp;#39;; ?&amp;gt; 一个可变变</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://sheaxiang.github.io/sitemap.xml
+Sitemap: /sitemap.xml

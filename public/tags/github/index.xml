@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github on Shea&#39;s Blog</title>
-    <link>https://sheaxiang.github.io/tags/github/</link>
+    <link>/tags/github/</link>
     <description>Recent content in github on Shea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 27 Mar 2021 18:29:08 +0800</lastBuildDate>
     
-	<atom:link href="https://sheaxiang.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用Hugo, Typora, GitHub Pages搭建博客</title>
-      <link>https://sheaxiang.github.io/post/building-blog-with-hugo-typora-github-pages/</link>
+      <link>/post/building-blog-with-hugo-typora-github-pages/</link>
       <pubDate>Sat, 27 Mar 2021 18:29:08 +0800</pubDate>
       
-      <guid>https://sheaxiang.github.io/post/building-blog-with-hugo-typora-github-pages/</guid>
+      <guid>/post/building-blog-with-hugo-typora-github-pages/</guid>
       <description>简述 在没有服务器和域名的情况下,想自己写博客,需要怎么做呢? 答案是使用Hugo, Typora, GitHub来搭建属于自己的博客,我们先来看下各自简介 Hugo: 是</description>
     </item>
     

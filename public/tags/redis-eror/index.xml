@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis eror on Shea&#39;s Blog</title>
+    <link>/tags/redis-eror/</link>
+    <description>Recent content in redis eror on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Feb 2018 00:00:09 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/redis-eror/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error</title>
+      <link>/post/redis-startup-error-creating-server-tcp-listening-socket/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:09 +0800</pubDate>
+      
+      <guid>/post/redis-startup-error-creating-server-tcp-listening-socket/</guid>
+      <description>windows下安装redis第一次启动报错： 1 [16768] 26 Feb 13:54:50.513 # Creating Server TCP listening socket 127.0.0.1:6379: bind: No error 解决方法：在命令行中运行 1 2 3 4 5 redis-cli.exe 127.0.0.1:6379&amp;gt;shutdown not connected&amp;gt;exit 然后重新运行redis</description>
+    </item>
+    
+  </channel>
+</rss>

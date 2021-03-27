@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on Shea&#39;s Blog</title>
+    <link>/categories/php/</link>
+    <description>Recent content in php on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Jun 2020 01:05:28 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>两数相加-php版</title>
+      <link>/post/add-two-numbers-php-version/</link>
+      <pubDate>Mon, 29 Jun 2020 01:05:28 +0800</pubDate>
+      
+      <guid>/post/add-two-numbers-php-version/</guid>
+      <description>题目: 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将</description>
+    </item>
+    
+    <item>
+      <title>两数之和-php版</title>
+      <link>/post/sum-of-two-numbers-php-version/</link>
+      <pubDate>Sat, 25 May 2019 00:59:05 +0800</pubDate>
+      
+      <guid>/post/sum-of-two-numbers-php-version/</guid>
+      <description>我们先来看题目: 1 2 3 4 5 6 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可</description>
+    </item>
+    
+    <item>
+      <title>php返回换行的json数据</title>
+      <link>/post/php-returns-the-wrapped-json-data/</link>
+      <pubDate>Thu, 21 Feb 2019 00:55:10 +0800</pubDate>
+      
+      <guid>/post/php-returns-the-wrapped-json-data/</guid>
+      <description>今天刚好需要返回拼接数据,展示一大堆数据,需要用到换行,原来想着使用html标签:&amp;lt;br/&amp;gt;,不行,也用过\r,也不行,后面想到</description>
+    </item>
+    
+    <item>
+      <title>laravel php 使用阿里云OSS</title>
+      <link>/post/laravel-php-uses-alibaba-cloud-oss/</link>
+      <pubDate>Thu, 24 Jan 2019 00:44:27 +0800</pubDate>
+      
+      <guid>/post/laravel-php-uses-alibaba-cloud-oss/</guid>
+      <description>前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下 首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket 新建 Bucket 然后</description>
+    </item>
+    
+    <item>
+      <title>PHP 两个问号 ?? 和 ?:的区别</title>
+      <link>/post/the-difference-between-two-question-marks-in-php/</link>
+      <pubDate>Fri, 19 Oct 2018 00:30:49 +0800</pubDate>
+      
+      <guid>/post/the-difference-between-two-question-marks-in-php/</guid>
+      <description>PHP的三元运算符已经很常用了,即:(expr1) ? (expr2) : (expr3) 在 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3 还有一种就是 ?:的形式,自p</description>
+    </item>
+    
+    <item>
+      <title>PHP 可变数量的参数列表 …</title>
+      <link>/post/php-variable-number-of-parameter-list/</link>
+      <pubDate>Tue, 27 Mar 2018 00:20:55 +0800</pubDate>
+      
+      <guid>/post/php-variable-number-of-parameter-list/</guid>
+      <description>PHP在用户自定义函数中支持可变数量的参数列表，在PHP5.6及以上的版本中，由语法…语法实现： 1 2 3 4 5 6 7 8 9 function sum(...$numbers) { $a = 0; foreach ($numbers as $number) { $a +=</description>
+    </item>
+    
+    <item>
+      <title>PHP7的新特性详解–返回类型（Return Types）</title>
+      <link>/post/new-features-of-php7-return-type/</link>
+      <pubDate>Fri, 23 Feb 2018 23:51:17 +0800</pubDate>
+      
+      <guid>/post/new-features-of-php7-return-type/</guid>
+      <description>PHP 5.x 目前在PHP 5.x中，没有办法来指定一个方法应该返回哪种类型的结果，你可能会说，可以转换返回的值啊，我们可以猜测返回结果的具体类型，但它</description>
+    </item>
+    
+    <item>
+      <title>PHP 可变变量 “$$”</title>
+      <link>/post/php-variable/</link>
+      <pubDate>Fri, 23 Feb 2018 23:44:32 +0800</pubDate>
+      
+      <guid>/post/php-variable/</guid>
+      <description>有时候使用可变变量名是很方便的。就是说，一个变量的变量名可以动态的设置和使用。一个普通的变量通过声明来设置，例如： 1 2 3 &amp;lt;?php $a = &amp;#39;hello&amp;#39;; ?&amp;gt; 一个可变变</description>
+    </item>
+    
+  </channel>
+</rss>

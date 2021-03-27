@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql优化 on Shea&#39;s Blog</title>
+    <link>/tags/mysql%E4%BC%98%E5%8C%96/</link>
+    <description>Recent content in mysql优化 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Jun 2020 01:10:16 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/mysql%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL优化:回表查询和覆盖索引</title>
+      <link>/post/mysql-optimization-return-table-query-and-overlay-index/</link>
+      <pubDate>Mon, 29 Jun 2020 01:10:16 +0800</pubDate>
+      
+      <guid>/post/mysql-optimization-return-table-query-and-overlay-index/</guid>
+      <description>今天看mysql优化时,发现这个知识点有点模糊了,就重新整理下 回表是什么? 简单来说, 执行一条sql语句, 如果查询条件为普通索引(非聚簇cu索</description>
+    </item>
+    
+  </channel>
+</rss>

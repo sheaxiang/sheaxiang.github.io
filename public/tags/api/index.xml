@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>api on Shea&#39;s Blog</title>
+    <link>/tags/api/</link>
+    <description>Recent content in api on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Feb 2018 23:24:56 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于 RESTful API 设计的总结</title>
+      <link>/post/summary-of-restful-api-design/</link>
+      <pubDate>Sun, 11 Feb 2018 23:24:56 +0800</pubDate>
+      
+      <guid>/post/summary-of-restful-api-design/</guid>
+      <description>为什么要用 RESTful RESTful 给我的最大感觉就是规范、易懂和优雅，一个结构清晰、易于理解的 API 完全可以省去许多无意义的沟通和文档。并且 RESTful 现在越来越流行， 在开始</description>
+    </item>
+    
+  </channel>
+</rss>
