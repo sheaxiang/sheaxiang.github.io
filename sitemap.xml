@@ -1,35 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="https://sheaxiang.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sheaxiang.github.io/note/change-log/</loc>
-    <lastmod>2021-03-24T19:34:45+08:00</lastmod>
+    <loc>https://sheaxiang.github.io/categories/</loc>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://sheaxiang.github.io/tags/getting-started/</loc>
-    <lastmod>2021-03-24T19:34:45+08:00</lastmod>
+    <loc>https://sheaxiang.github.io/tags/github/</loc>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://sheaxiang.github.io/tags/hugo/</loc>
-    <lastmod>2021-03-24T19:34:45+08:00</lastmod>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://sheaxiang.github.io/note/</loc>
-    <lastmod>2021-03-24T19:34:45+08:00</lastmod>
+    <loc>https://sheaxiang.github.io/post/</loc>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://sheaxiang.github.io/</loc>
-    <lastmod>2021-03-24T19:34:45+08:00</lastmod>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://sheaxiang.github.io/tags/</loc>
-    <lastmod>2021-03-24T19:34:45+08:00</lastmod>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://sheaxiang.github.io/tags/typora/</loc>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://sheaxiang.github.io/post/building-blog-with-hugo-typora-github-pages/</loc>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://sheaxiang.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-03-27T18:29:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
