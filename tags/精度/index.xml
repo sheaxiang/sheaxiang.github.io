@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>精度 on Shea&#39;s Blog</title>
+    <link>/tags/%E7%B2%BE%E5%BA%A6/</link>
+    <description>Recent content in 精度 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 24 Nov 2018 00:39:31 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%B2%BE%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>单精度和双精度</title>
+      <link>/post/single-precision-and-double-precision/</link>
+      <pubDate>Sat, 24 Nov 2018 00:39:31 +0800</pubDate>
+      
+      <guid>/post/single-precision-and-double-precision/</guid>
+      <description>单精度:也称为float,占4个字节,32位,有效位数为7位由1位符号,8位指数,23位小数组成 双精度:也称为double,占8个字节,64</description>
+    </item>
+    
+  </channel>
+</rss>

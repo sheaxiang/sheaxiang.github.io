@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>laravel php 使用阿里云OSS - Shea&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sheaxiang" /><meta name="description" content="前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下 首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket 新建 Bucket 然后" /><meta name="keywords" content="shea, xiang, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="/post/laravel-php-uses-alibaba-cloud-oss/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="laravel php 使用阿里云OSS" />
+<meta property="og:description" content="前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下 首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket 新建 Bucket 然后" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/laravel-php-uses-alibaba-cloud-oss/" />
+<meta property="article:published_time" content="2019-01-24T00:44:27+08:00" />
+<meta property="article:modified_time" content="2019-01-24T00:44:27+08:00" />
+<meta itemprop="name" content="laravel php 使用阿里云OSS">
+<meta itemprop="description" content="前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下 首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket 新建 Bucket 然后">
+<meta itemprop="datePublished" content="2019-01-24T00:44:27&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-24T00:44:27&#43;08:00" />
+<meta itemprop="wordCount" content="1140">
+
+
+
+<meta itemprop="keywords" content="laravel,php,阿里云OSS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="laravel php 使用阿里云OSS"/>
+<meta name="twitter:description" content="前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下 首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket 新建 Bucket 然后"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">shea</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">shea</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">laravel php 使用阿里云OSS</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-01-24 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> PHP </a>
+            <a href="/categories/laravel/"> Laravel </a>
+            </div>
+          <span class="more-meta"> 1140 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>前段时间做了一个视频上传,及存储播放的功能,使用的是阿里云的OSS,总结记录下</p>
+<p>首先当然是开通阿里云的OSS对象存储,然后新建一个 Bucket</p>
+<p><img src="/images/laravel-php-uses-alibaba-cloud-oss.assets/FEZRBE@K4ZEMU1HPUKT.png" alt="create bucket"></p>
+<p>新建 Bucket</p>
+<p>然后就是新建一个 AccessKey,下面进入正题</p>
+<p>我采取的方式是最佳实践中的web端直传,这样可以不耗费本身服务器资源,但这里面有几点是需要注意的,上传视频时的服务器签名和授权访问</p>
+<p>先来看一下上传视频时的服务器签名,文档的具体位置在
+这 <a href="https://help.aliyun.com/document_detail/31926.html?spm=a2c4g.11174283.6.1123.5c677da2zyxDEi">https://help.aliyun.com/document_detail/31926.html?spm=a2c4g.11174283.6.1123.5c677da2zyxDEi</a>,如果在前端直接使用 OSS AccessKey 的话,会有很高的安全隐患,因为web直传的解决方案并没有太多涉及到OSS,所以我没有引入官方的SDK,而是手动实现, 下面看后端生成签名代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">public function ali_oss_verity()
+{
+	$dir = &#39;video/course/&#39;;//存放文件基础目录
+	$end = time() + config(&#39;site.ali_oos.expire&#39;);//过期时间
+
+	$policy = [
+		&#39;expiration&#39; =&gt; $this-&gt;gmt_iso8601($end),
+		&#39;conditions&#39; =&gt; [
+			[0=&gt;&#39;content-length-range&#39;, 1=&gt;0, 2=&gt;config(&#39;site.ali_oos.max_size&#39;)],//最大文件大小.用户可以自己设置
+			[0=&gt;&#39;starts-with&#39;, 1=&gt;&#39;$key&#39;, 2=&gt;$dir]// 表示用户上传的数据，必须是以$dir开始，不然上传会失败，这一步不是必须项，只是为了安全起见，防止用户通过policy上传到别人的目录。
+		]
+	];
+
+	$base64_policy = base64_encode(json_encode($policy));
+
+	$signature = base64_encode(hash_hmac(&#39;sha1&#39;, $base64_policy, config(&#39;site.ali_oos.AccessKeySecret&#39;), true));
+
+	return [
+		&#39;accessid&#39; =&gt; config(&#39;site.ali_oos.AccessKeyId&#39;),
+		&#39;host&#39; =&gt; config(&#39;site.ali_oos.host&#39;),//格式为 bucketname.endpoint
+		&#39;policy&#39; =&gt; $base64_policy,
+		&#39;signature&#39; =&gt; $signature,
+		&#39;expire&#39; =&gt; $end,
+		&#39;dir&#39; =&gt; $dir,
+	];
+}
+
+public function gmt_iso8601($time) {
+	$dtStr = date(&#34;c&#34;, $time);
+	$mydatetime = new \DateTime($dtStr);
+	$expiration = $mydatetime-&gt;format(\DateTime::ISO8601);
+	$pos = strpos($expiration, &#39;+&#39;);
+	$expiration = substr($expiration, 0, $pos);
+	return $expiration.&#34;Z&#34;;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>逻辑比较简单,通过一些参数生成签名,前端的代码就更简单了,具体的案例在这<a href="http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/index.html?spm=a2c4g.11186623.2.13.4a964382ResGwv">http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/index.html?spm=a2c4g.11186623.2.13.4a964382ResGwv</a></p>
+<p>下面说的就是文件的授权访问了,访问是需要授权的,这样可以防止流量大量丢失,核心代码如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">public function getVideoUrlAttribute($video_url)
+{
+	$time = time()+7200;//过期时间.这里设施的是两个小时
+	$string_to_sign_ordered = &#34;GET\n\n\n&#34;.$time.&#34;\n/&#34;.config(&#39;site.ali_oos.bucket&#39;).&#39;/&#39;.$video_url;
+	$signature = base64_encode(hash_hmac(&#39;sha1&#39;, $string_to_sign_ordered, config(&#39;site.ali_oos.AccessKeySecret&#39;), true));
+	return config(&#39;site.ali_oos.host&#39;).&#39;/&#39;.$video_url.&#39;?OSSAccessKeyId=&#39;.rawurlencode(config(&#39;site.ali_oos.AccessKeyId&#39;)).&#39;<span class="ni">&amp;Expires=&#39;.$time.&#39;&amp;Signature=&#39;.rawurlencode($signature).&#39;&#39;;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>这里使用了laravel中Eloquent的修改器,因为没有引入SDK,导致这里的算法签名需要自己手动实现,折腾了一段时间,不过好在折腾出来了,具体的生成签名参考官方文档<a href="https://www.alibabacloud.com/help/zh/doc-detail/31951.htm?spm=a2c63.p38356.b99.436.60d49209aJ7jFl.">https://www.alibabacloud.com/help/zh/doc-detail/31951.htm?spm=a2c63.p38356.b99.436.60d49209aJ7jFl.</a></p>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/laravel/">laravel</a>
+          <a href="/tags/php/">php</a>
+          <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91oss/">阿里云OSS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/using-golang-to-write-a-simple-web-server/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">使用golang写简单的web服务器</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/single-precision-and-double-precision/">
+            <span class="next-text nav-default">单精度和双精度</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:642290531@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sheaxiang" class="iconfont icon-github" title="github"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>sheaxiang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

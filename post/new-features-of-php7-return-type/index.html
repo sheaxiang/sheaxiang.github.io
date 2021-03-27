@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP7的新特性详解–返回类型（Return Types） - Shea&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sheaxiang" /><meta name="description" content="PHP 5.x 目前在PHP 5.x中，没有办法来指定一个方法应该返回哪种类型的结果，你可能会说，可以转换返回的值啊，我们可以猜测返回结果的具体类型，但它" /><meta name="keywords" content="shea, xiang, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="/post/new-features-of-php7-return-type/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="PHP7的新特性详解–返回类型（Return Types）" />
+<meta property="og:description" content="PHP 5.x 目前在PHP 5.x中，没有办法来指定一个方法应该返回哪种类型的结果，你可能会说，可以转换返回的值啊，我们可以猜测返回结果的具体类型，但它" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/new-features-of-php7-return-type/" />
+<meta property="article:published_time" content="2018-02-23T23:51:17+08:00" />
+<meta property="article:modified_time" content="2018-02-23T23:51:17+08:00" />
+<meta itemprop="name" content="PHP7的新特性详解–返回类型（Return Types）">
+<meta itemprop="description" content="PHP 5.x 目前在PHP 5.x中，没有办法来指定一个方法应该返回哪种类型的结果，你可能会说，可以转换返回的值啊，我们可以猜测返回结果的具体类型，但它">
+<meta itemprop="datePublished" content="2018-02-23T23:51:17&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-23T23:51:17&#43;08:00" />
+<meta itemprop="wordCount" content="613">
+
+
+
+<meta itemprop="keywords" content="新特性,php7,返回类型," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP7的新特性详解–返回类型（Return Types）"/>
+<meta name="twitter:description" content="PHP 5.x 目前在PHP 5.x中，没有办法来指定一个方法应该返回哪种类型的结果，你可能会说，可以转换返回的值啊，我们可以猜测返回结果的具体类型，但它"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">shea</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">shea</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PHP7的新特性详解–返回类型（Return Types）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-23 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> PHP </a>
+            </div>
+          <span class="more-meta"> 613 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#php-5x">PHP 5.x</a></li>
+        <li><a href="#php-7x">PHP 7.x</a></li>
+        <li><a href="#接口">接口</a></li>
+        <li><a href="#更多栗子">更多栗子</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="php-5x">PHP 5.x</h2>
+<p>目前在PHP 5.x中，没有办法来指定一个方法应该返回哪种类型的结果，你可能会说，可以转换返回的值啊，我们可以猜测返回结果的具体类型，但它并不理想且容易遇到<code>意想不到</code>的怪事。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">function getId() { 
+    return (int) $this-&gt;id; 
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="php-7x">PHP 7.x</h2>
+<p>PHP 7很容易做到，我们只需要在定义方法时指明返回得类型即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">function getUser() : User { 
+    return new User; 
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>在上面的例子中，如果我们试图返回任何其他非<code>User的结果</code>，那么我们就会遇到一个TypeException。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">function getUser() : User { 
+    return &#39;Mince Pies!&#39;; 
+} 
+$user = getUser();
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">TypeException: Return value of getUser() must be an instance of User, string returned
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="接口">接口</h2>
+<p>我们也可以定义我们的接口，要求其使用指定的返回类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">interface UserInterface { 
+    public function getUser() : User; 
+    public function getUserProfile() : UserProfile; 
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>我们就能够通过设定返回类型的typehints的方式，来实现该接口。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">class UserRepository implements UserInterface { 
+    public function getUser() : User { 
+        return new User; 
+    } 
+    public function getUserProfile() : UserProfile { 
+        return new UserProfile; 
+    } 
+} 
+(new UserRepository)-&gt;getUser();
+</code></pre></td></tr></table>
+</div>
+</div><p>我喜欢这种新方法; 那感觉就像做事情用了一个自然而简洁的方式。但如果我们仅实现该接口而不调用，让方法返回期望之外的结果会如何呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">class UserRepository implements UserInterface { 
+    public function getUser() : User { 
+        return &#39;foo&#39;; 
+    } 
+    public function getUserProfile() : UserProfile { 
+        return &#39;bar&#39;; 
+    } 
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>在这一点上的代码不会错误，因为我们还没有调用该方法，应用程序只能在运行时，当返回<code>foo</code>和<code>bar</code>的字符串时才抛出一个异常。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">(new UserRepository)-&gt;getUser();
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Uncaught TypeException: Return value of UserRepository::getUser() must be an instance of User, string returned
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="更多栗子">更多栗子</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+    <span class="c1">//有效的返回类型
+</span><span class="c1"></span>   <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
+   <span class="k">function</span> <span class="nf">returnIntValue</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nv">$value</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">print</span><span class="p">(</span><span class="nx">returnIntValue</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+    <span class="c1">//无效的返回类型
+</span><span class="c1"></span>   <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
+   <span class="k">function</span> <span class="nf">returnIntValue</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nv">$value</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">print</span><span class="p">(</span><span class="nx">returnIntValue</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这将在浏览器产生输出以下结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Fatal error: Uncaught TypeError: Return value of returnIntValue() must be of the type integer, float returned
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E6%96%B0%E7%89%B9%E6%80%A7/">新特性</a>
+          <a href="/tags/php7/">php7</a>
+          <a href="/tags/%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B/">返回类型</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/redis-startup-error-creating-server-tcp-listening-socket/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/php-variable/">
+            <span class="next-text nav-default">PHP 可变变量 “$$”</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:642290531@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sheaxiang" class="iconfont icon-github" title="github"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>sheaxiang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

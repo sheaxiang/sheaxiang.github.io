@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error - Shea&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sheaxiang" /><meta name="description" content="windows下安装redis第一次启动报错： 1 [16768] 26 Feb 13:54:50.513 # Creating Server TCP listening socket 127.0.0.1:6379: bind: No error 解决方法：在命令行中运行 1 2 3 4 5 redis-cli.exe 127.0.0.1:6379&amp;gt;shutdown not connected&amp;gt;exit 然后重新运行redis" /><meta name="keywords" content="shea, xiang, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="/post/redis-startup-error-creating-server-tcp-listening-socket/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.2e81bbed97b8b282c1aeb57488cc71c8d8c8ec559f3931531bd396bf31e0d4dd.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error" />
+<meta property="og:description" content="windows下安装redis第一次启动报错： 1 [16768] 26 Feb 13:54:50.513 # Creating Server TCP listening socket 127.0.0.1:6379: bind: No error 解决方法：在命令行中运行 1 2 3 4 5 redis-cli.exe 127.0.0.1:6379&gt;shutdown not connected&gt;exit 然后重新运行redis" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/redis-startup-error-creating-server-tcp-listening-socket/" />
+<meta property="article:published_time" content="2018-02-26T00:00:09+08:00" />
+<meta property="article:modified_time" content="2018-02-26T00:00:09+08:00" />
+<meta itemprop="name" content="redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error">
+<meta itemprop="description" content="windows下安装redis第一次启动报错： 1 [16768] 26 Feb 13:54:50.513 # Creating Server TCP listening socket 127.0.0.1:6379: bind: No error 解决方法：在命令行中运行 1 2 3 4 5 redis-cli.exe 127.0.0.1:6379&gt;shutdown not connected&gt;exit 然后重新运行redis">
+<meta itemprop="datePublished" content="2018-02-26T00:00:09&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-26T00:00:09&#43;08:00" />
+<meta itemprop="wordCount" content="105">
+
+
+
+<meta itemprop="keywords" content="redis eror," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error"/>
+<meta name="twitter:description" content="windows下安装redis第一次启动报错： 1 [16768] 26 Feb 13:54:50.513 # Creating Server TCP listening socket 127.0.0.1:6379: bind: No error 解决方法：在命令行中运行 1 2 3 4 5 redis-cli.exe 127.0.0.1:6379&gt;shutdown not connected&gt;exit 然后重新运行redis"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">shea</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">shea</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">redis启动出错Creating Server TCP listening socket 127.0.0.1:6379: bind: No error</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-26 </span>
+        <div class="post-category">
+            <a href="/categories/redis/"> redis </a>
+            </div>
+          <span class="more-meta"> 105 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#windows下安装redis第一次启动报错">windows下安装redis第一次启动报错：</a></li>
+        <li><a href="#解决方法在命令行中运行">解决方法：在命令行中运行</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="windows下安装redis第一次启动报错">windows下安装redis第一次启动报错：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[16768] 26 Feb 13:54:50.513 # Creating Server TCP listening socket 127.0.0.1:6379: bind: No error
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="解决方法在命令行中运行">解决方法：在命令行中运行</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">redis-cli.exe
+
+127.0.0.1:6379&gt;shutdown
+
+not connected&gt;exit
+</code></pre></td></tr></table>
+</div>
+</div><p>然后重新运行redis-server.exe redis.windows.conf，启动成功！</p>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/redis-eror/">redis eror</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/setting-up-redis-service-in-windows/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">在Windows下设置Redis服务</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/new-features-of-php7-return-type/">
+            <span class="next-text nav-default">PHP7的新特性详解–返回类型（Return Types）</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:642290531@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/sheaxiang" class="iconfont icon-github" title="github"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>sheaxiang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

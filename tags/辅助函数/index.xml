@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>辅助函数 on Shea&#39;s Blog</title>
+    <link>/tags/%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0/</link>
+    <description>Recent content in 辅助函数 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Feb 2018 00:09:37 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel的辅助函数列表</title>
+      <link>/post/list-of-auxiliary-functions-of-laravel/</link>
+      <pubDate>Wed, 28 Feb 2018 00:09:37 +0800</pubDate>
+      
+      <guid>/post/list-of-auxiliary-functions-of-laravel/</guid>
+      <description>数组： array_add() 如果给的键不在数组中，则会把给定的键值添加到数组中： 1 2 3 $array = array_add([&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;Desk&amp;#39;], &amp;#39;price&amp;#39;, 100); // [&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;Desk&amp;#39;, &amp;#39;price&amp;#39; =&amp;gt; 100] 这里合并数组有另外的一个方法： 1 2 3 $person = [&amp;#39;name&amp;#39; =&amp;gt; &amp;#39;shea&amp;#39;]</description>
+    </item>
+    
+  </channel>
+</rss>

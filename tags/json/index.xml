@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>json on Shea&#39;s Blog</title>
+    <link>/tags/json/</link>
+    <description>Recent content in json on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Feb 2019 00:55:10 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>php返回换行的json数据</title>
+      <link>/post/php-returns-the-wrapped-json-data/</link>
+      <pubDate>Thu, 21 Feb 2019 00:55:10 +0800</pubDate>
+      
+      <guid>/post/php-returns-the-wrapped-json-data/</guid>
+      <description>今天刚好需要返回拼接数据,展示一大堆数据,需要用到换行,原来想着使用html标签:&amp;lt;br/&amp;gt;,不行,也用过\r,也不行,后面想到</description>
+    </item>
+    
+  </channel>
+</rss>

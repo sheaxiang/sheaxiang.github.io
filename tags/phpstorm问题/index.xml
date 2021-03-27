@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phpstorm问题 on Shea&#39;s Blog</title>
+    <link>/tags/phpstorm%E9%97%AE%E9%A2%98/</link>
+    <description>Recent content in phpstorm问题 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 May 2018 00:27:27 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/phpstorm%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决PhpStorm代码不补全不提示的问题</title>
+      <link>/post/solve-the-problem-of-phpstorm-code-not-complete-and-not-prompt/</link>
+      <pubDate>Wed, 30 May 2018 00:27:27 +0800</pubDate>
+      
+      <guid>/post/solve-the-problem-of-phpstorm-code-not-complete-and-not-prompt/</guid>
+      <description>今天phpstorm用着用着发现代码不提示了，不会自动引入类了，然后就在网上找方法，解决办法如下： 进入phpstorm , file -&amp;gt; Invalidate Caches / Resta</description>
+    </item>
+    
+  </channel>
+</rss>

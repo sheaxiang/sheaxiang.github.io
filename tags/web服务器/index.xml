@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web服务器 on Shea&#39;s Blog</title>
+    <link>/tags/web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in web服务器 on Shea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Jan 2019 00:50:55 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/web%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用golang写简单的web服务器</title>
+      <link>/post/using-golang-to-write-a-simple-web-server/</link>
+      <pubDate>Fri, 25 Jan 2019 00:50:55 +0800</pubDate>
+      
+      <guid>/post/using-golang-to-write-a-simple-web-server/</guid>
+      <description>golang是一门用了就不想停下来的语言,简单实用易部署,我也开始了学习golang的路程,因为我主php,学习一门新语言难免会涉及到web</description>
+    </item>
+    
+  </channel>
+</rss>
