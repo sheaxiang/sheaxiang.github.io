@@ -54,7 +54,7 @@ url = "/categories/"
 version = "4.x"           # Used to give a friendly message when you have an incompatible update
 debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
-since = "2021"            # Site creation time          # 站点建立时间
+since = "2018"            # Site creation time          # 站点建立时间
 # use public git repo url to link lastmod git commit, enableGitInfo should be true.
 # 指定 git 仓库地址，可以生成指向最近更新的 git commit 的链接，需要将 enableGitInfo 设置成 true.
 gitRepo = ""
@@ -116,7 +116,7 @@ uglyURLs = false          # please keep same with uglyurls setting
 showLanguageSelector = false
 
 [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
-enable = true
+enable = false
 jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
 slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
 fancyboxJS = '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>'
